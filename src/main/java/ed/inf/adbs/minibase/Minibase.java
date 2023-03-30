@@ -163,8 +163,6 @@ public class Minibase {
         Head head = query.getHead();
         if(head.getSumAggregate() != null)
         {
-            System.out.println("head atom: "+query.getHeadAtom());
-            System.out.println("head terms: "+query.getHeadAtom().getTerms());
             root = new SumOperator(root, query.getHeadAtom());
         }
         else {

@@ -86,7 +86,7 @@ public class SelectOperator extends Operator {
         queryAtomTerms.add( new Variable("x"));
         queryAtomTerms.add( new Variable("y"));
         RelationalAtom queryAtom = new RelationalAtom("R", queryAtomTerms); // R:(9, x, y)
-        System.out.println("Query relational atom: " + queryAtom);
+        //System.out.println("Query relational atom: " + queryAtom);
 
         ScanOperator scanOp = new ScanOperator(queryAtom);
 
@@ -97,9 +97,6 @@ public class SelectOperator extends Operator {
         ComparisonAtom compAtom2 = new ComparisonAtom(
                 new Variable("y"), new StringConstant("mlpr"), ComparisonOperator.fromString(">=")); // y > "mlpr"
         compAtomList.add(compAtom2);
-        System.out.println("Query comparison atom: " + compAtom2);
-
-
         SelectOperator seleOp = new SelectOperator(scanOp, compAtomList);
         seleOp.dump(null);
     }

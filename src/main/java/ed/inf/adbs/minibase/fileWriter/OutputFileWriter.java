@@ -20,7 +20,6 @@ public class OutputFileWriter {
 
     public static void initialiseOutputWriter(String outputFileName) throws IOException {
         File outFile = Paths.get(outputFileName).toFile();
-        System.out.println("Output file name is: "+outputFileName);
         outFile.createNewFile();
 
         fW = new FileWriter(outputFileName);

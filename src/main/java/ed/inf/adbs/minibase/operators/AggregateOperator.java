@@ -103,7 +103,7 @@ public abstract class AggregateOperator extends Operator {
         while (childOutput != null) {
             // extract the term list and remove the aggregation term
             List<Term> termList = new ArrayList<>();
-            System.out.println("projectIndices: "+projectIndices);
+           // System.out.println("projectIndices: "+projectIndices);
             for (int pi : this.projectIndices) {
                 termList.add(childOutput.getTerms().get(pi));
             }

@@ -31,12 +31,9 @@ public class Query {
     public RelationalAtom getHeadAtom() {
         try {
             List<Term> terms = new ArrayList<>();
-            System.out.println("Head inside Query: " + getHead());
-            System.out.println("Head terms inside Query: " + getHead().getVariables());
-            System.out.println("Variables inside Query: " + getHead().getSumAggregate());
             List<Variable> vars = getHead().getVariables();
             SumAggregate sumAggr = getHead().getSumAggregate();
-            System.out.println("Sum Aggregate inside Q: " + sumAggr);
+
             for (int i = 0; i < vars.size(); i++) {
                 terms.add((Term) vars.get(i));
             }
@@ -46,8 +43,7 @@ public class Query {
             }
 
             this.headAtom = new RelationalAtom(getHead().getName(), terms);
-            System.out.println("terms inside Query: " + terms);
-            System.out.println("head atom inside Query: " + this.headAtom);
+
 
         }
         catch (NullPointerException e) { e.printStackTrace(); }
